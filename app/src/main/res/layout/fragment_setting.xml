@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainCV"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RadioGroup
+        android:id="@+id/rgDistanceDisplaySetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDistanceSetting">
+
+        <RadioButton
+            android:id="@+id/rbByKm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/show_distance_in_km"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <RadioButton
+            android:id="@+id/rbByMiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_distance_in_miles"
+            android:textSize="@dimen/text_size_16sp" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvDistanceSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:text="@string/distance_display_setting"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rgDistanceDisplaySetting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRadiusSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:text="Show places within radius"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/rgDistanceDisplaySetting" />
+
+
+    <RadioGroup
+        android:id="@+id/distanceRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRadiusSetting">
+
+        <RadioButton
+            android:id="@+id/rbRadius5Km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="5 Km"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <RadioButton
+            android:id="@+id/rbRadius10Km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 Km"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <RadioButton
+            android:id="@+id/rbRadius15Km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15 Km"
+            android:textSize="@dimen/text_size_16sp" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">NearbyPlacesFinderApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Johnson Controls</string>
+    <string name="nav_header_subtitle">Testuser@js.in</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">All</string>
+    <string name="menu_restaurant">Restaurant</string>
+    <string name="menu_hospitals">Hospitals</string>
+    <string name="menu_pubs">Pubs</string>
+    <string name="menu_schools">Schools</string>
+    <string name="menu_settings">Settings</string>
+    <string name="home_second">Home Second</string>
+
+    <string name="place_restaurant">Restaurant</string>
+    <string name="show_distance_in_km">Show distance in Km</string>
+    <string name="show_distance_in_miles">Show distance in Miles</string>
+    <string name="distance_display_setting">Distance display setting</string>
+    <string name="enable_location">Enable Location</string>
+    <string name="enable_location_message">Your Locations Settings are OFF \nPlease Enable Location</string>
+    <string name="title_allow">Allow</string>
+    <string name="title_cancel">Cancel</string>
+</resources>

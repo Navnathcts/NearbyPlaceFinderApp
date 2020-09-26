@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.johnsoncontrol.nearbyplacesfinderapp.view.ui.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.johnsoncontrol.nearbyplacesfinderapp.view.ui.HomeFragment"
+        android:label="@string/home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_restaurant"
+        android:name="com.johnsoncontrol.nearbyplacesfinderapp.view.ui.HomeFragment"
+        android:label="@string/menu_restaurant"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="fragmentType"
+            android:defaultValue="restaurant"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_hospitals"
+        android:name="com.johnsoncontrol.nearbyplacesfinderapp.view.ui.HomeFragment"
+        android:label="@string/menu_hospitals"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="fragmentType"
+            android:defaultValue="hospitals"
+            app:argType="string" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_pubs"
+        android:name="com.johnsoncontrol.nearbyplacesfinderapp.view.ui.HomeFragment"
+        android:label="@string/menu_pubs"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="fragmentType"
+            android:defaultValue="pubs"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_schools"
+        android:name="com.johnsoncontrol.nearbyplacesfinderapp.view.ui.HomeFragment"
+        android:label="@string/menu_schools"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="fragmentType"
+            android:defaultValue="schools"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.johnsoncontrol.nearbyplacesfinderapp.view.ui.SettingFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="fragmentType"
+            android:defaultValue="settings"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
