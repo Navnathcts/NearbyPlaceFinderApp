@@ -111,6 +111,7 @@ class HomeFragment : Fragment(), GoogleApiClient.ConnectionCallbacks,
             mGoogleApiClient?.connect()
         }
     }
+
     private fun showAlert() {
         val dialog: android.app.AlertDialog.Builder =
             android.app.AlertDialog.Builder(requireActivity())
@@ -128,7 +129,9 @@ class HomeFragment : Fragment(), GoogleApiClient.ConnectionCallbacks,
                     MY_PERMISION_CODE
                 )
             }
-            .setNegativeButton(getString(R.string.title_cancel), { paramDialogInterface, paramInt -> })
+            .setNegativeButton(
+                getString(R.string.title_cancel),
+                { paramDialogInterface, paramInt -> })
         dialog.show()
     }
 
@@ -194,11 +197,14 @@ class HomeFragment : Fragment(), GoogleApiClient.ConnectionCallbacks,
                     ) { location ->
                         if (location != null) {
                             homeViewModel.getNearbyPlaces(
-                                location.latitude.toString() + "," + location.longitude ,
+                                location.latitude.toString() + "," + location.longitude,
                                 radius,
                                 placeCategory ?: "",
                                 Constants.GOOGLE_PLACE_API_KEY,
-                                SharedPrefUtility.getBooleanValue(requireActivity(),Constants.KEY_SHOW_BY_MILES)
+                                SharedPrefUtility.getBooleanValue(
+                                    requireActivity(),
+                                    Constants.KEY_SHOW_BY_MILES
+                                )
                             ).observe(requireActivity(), Observer {
                                 processPlaceDetailsResponse(it)
                             })
@@ -219,20 +225,21 @@ class HomeFragment : Fragment(), GoogleApiClient.ConnectionCallbacks,
         when (it.status) {
             Status.SUCCESS -> {
                 recyclerView?.showView()
+                tvErrorView.hideView()
                 pbLoader?.hideView()
                 placeListAdapter?.setNearbyPlacesList(it.data)
             }
             Status.ERROR -> {
                 recyclerView?.showView()
                 pbLoader?.hideView()
-                Toast.makeText(
-                    requireActivity(),
-                    it.message,
-                    Toast.LENGTH_LONG
-                ).show()
+                tvErrorView.apply {
+                    text = it.message
+                    showView()
+                }
             }
             Status.LOADING -> {
                 recyclerView?.hideView()
+                tvErrorView.hideView()
                 pbLoader?.showView()
             }
         }
