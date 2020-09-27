@@ -14,8 +14,8 @@ object ApiClient {
         get() {
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
-            val client = OkHttpClient.Builder().readTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS).addInterceptor(interceptor)
+            val client = OkHttpClient.Builder().readTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS).addInterceptor(interceptor)
                 .addInterceptor(MockInterceptor())
                 .build()
             retrofit = Retrofit.Builder()

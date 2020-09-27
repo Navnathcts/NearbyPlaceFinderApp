@@ -23,4 +23,6 @@
     <string name="enable_location_message">Your Locations Settings are OFF \nPlease Enable Location</string>
     <string name="title_allow">Allow</string>
     <string name="title_cancel">Cancel</string>
+    <string name="no_laction_permission_granted_error">You don\'t have location permision granted, you can not fetch nearby locations.</string>
+    <string name="error_fetching_location">Error in fetching the location</string>
 </resources>
